@@ -7,13 +7,18 @@
 //
 
 #import "TanQianAppDelegate.h"
-
+#import "MainTableViewController.h"
 @implementation TanQianAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    MainTableViewController *main=[[MainTableViewController alloc] init];
+    UINavigationController *nvc=[[UINavigationController alloc] initWithRootViewController:main];
+    
+    self.window.rootViewController=nvc;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
